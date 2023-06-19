@@ -1,0 +1,17 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="col-md-4 col-sm-12 wrapper">
+        <div class="img-op">
+            <img src="{{ product.image.url }}" alt="{{ product.name|capfirst }}" width="359" height="229">
+        </div>
+        <div class="text">{{ product.name|capfirst }}</div>
+        <div class="price1">От {{ product.price }} руб</div>
+        <div class="d-flex justify-content-around">
+            <a href="{% url 'mainapp:index' %}#z1" class="b_order">
+                Заказать
+            </a>
+        </div>
+    </div>
+    <div class="info_on_product">{{ product.info|linebreaks }}</div>
+{% endblock %}

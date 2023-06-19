@@ -1,0 +1,28 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+     <div class="element-animation">
+                            <span>
+    <div class="tblock">
+        <h6 id="service" class="t6">Наши услуги</h6>
+        <section class="row">
+            {% for item in products %}
+                <div class="col-md-4 col-sm-12 wrapper">
+                    <div class="img-op">
+                        <img src="{{ item.image.url }}" alt="{{ item.name|capfirst }}" width="359" height="229">
+                    </div>
+                    <div class="text">{{ item.name|capfirst }}</div>
+                    <div class="price1">От {{ item.price }} руб</div>
+                    <div class="d-flex justify-content-around">
+                        <a href="{% url 'mainapp:info' item.id %}" class="b_order">
+                            Заказать
+                        </a>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+                            </span>
+     </div>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+
+    <link href='{% static 'css/bootstrap.min.css' %}' rel="stylesheet">
+    <link href='{% static 'css/media.css' %}' rel="stylesheet">
+    <link href='{% static 'css/css.css' %}' rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon-32x32%201.png" type="image/x-icon">
+
+</head>
+<body>
+<div class="b1">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg " style="height: 70px; background: black">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'mainapp:index' %}"><img src="{% static 'img/logo8.png' %}" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="{% url 'mainapp:index' %}">Главная</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'mainapp:index' %}#service">Услуги</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'mainapp:catalog' %}">Каталог</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'mainapp:index' %}#map">Контакты</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'mainapp:index' %}#o_nas">О нас</a>
+                        {#                        <a class="nav-link number" aria-current="page">+7 3522 46-07-08</a>#}
+                        {% if not user.is_authenticated %}
+                            <a class="nav-link number" aria-current="page"
+                               href="{% url 'authapp:login' %}">Авторизация</a>
+                            <a class="nav-link number" aria-current="page" href="{% url 'authapp:register' %}">Регистрация</a>
+                        {% else %}
+                            <a class="nav-link number" aria-current="page" href="{% url 'authapp:login' %}">Корзина</a>
+                            <a class="nav-link number" aria-current="page" href="{% url 'authapp:login' %}">Заказы</a>
+                            <a class="nav-link number" aria-current="page" href="{% url 'authapp:logout' %}"><img
+                                    class="exit" src="{% static 'img/icons8-выход-50.png' %}" alt="" width="30"
+                                    height="30"></a>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="container" style="margin-top: 90px">
+    {% block content %}
+
+    {% endblock %}
+</div>
+</div>
+    <div id="map" class="map">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4d4a381788fd6f28f29538f1a79e4b52b392d5713c22b4a796360d9642051c75&amp;source=constructor"
+                width="100%" height="700" frameborder="0"></iframe>
+        <div class="cube3">
+            <div class="tcube">
+                <div class="text15">ХОТИТЕ ОБСУДИТЬ<br> ЗАКАЗ ЛИЧНО?</div>
+                <div class="text17">Приезжайте к нам в офис:</div>
+                <div class="text16">
+                    Курганская область г.Курган<br> ул.Советская, д.51<br></div>
+                <div class="text18"> Телефон: +7 3522 46-07-08</div>
+                <div class="text19"> ОГРНИП 316450100051703</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="footer_link">
+                <div class="linkfooter">
+                    <a class="link" aria-current="page" href="#">Главная</a>
+                    <a class="link" aria-current="page" href="#service">Услуги</a>
+                    <a class="link" aria-current="page" href="#">Контакты</a>
+                    <a class="link" aria-current="page" href="#o_nas">О нас</a>
+                    <a class="link" aria-current="page">+7 3522 46-07-08</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</html>

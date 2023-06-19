@@ -1,0 +1,317 @@
+@media (min-width: 240px) and (max-width: 1000px){
+    .info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .imgtop{
+        position: relative;
+        height: 445px;
+        object-fit: cover;
+        border-radius: 6px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .photo_block {
+        margin-left: 0;
+    }
+
+    .img-big{
+        display: none;
+    }
+    
+    .navbar-light .navbar-nav .nav-link {
+        color: white;
+        font-weight: 500;
+    }
+    .o_nas_main .row{
+        flex-direction: column;
+    }
+    .navbar-light .navbar-toggler{
+        line-height: 1.5;
+    }
+    .img-op img{
+        
+        width: 100%;
+        object-fit: cover;
+        height: 305px;
+    
+
+    }
+
+    .img-op{
+        width: 100%;
+    }
+    .cube3{
+        left: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+    }
+    .input, .tcube{
+        width: 100%;
+    }
+    .spisok, .tb1{
+        width: 70%;
+    }
+    .icons_main{
+        display: flex;
+        height: 550px;
+        justify-content: space-around;
+    }
+    .t5 {
+    font-size: 32px;
+    }
+    .p5{
+    display: none;
+    }
+    .element-animation.element-show {
+      
+    opacity: 1;
+    transition: all 1.5s;
+    transform: translateY(0%);
+    }
+    .navbar .container {
+        width: 100%;
+    }
+    .navbar-brand img{
+        width: 200px;
+        height: 50px;
+    }
+    .info2 {
+        color: #BFBFBF;
+        position: absolute;
+        padding: 10px;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        text-align: center;
+        line-height: 1;
+    }
+    .info1 {
+        color: #ffffff;
+        position: absolute;
+        padding: 10px;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        text-align: center;
+        line-height: 1;
+    }
+
+
+    .navbar-toggler {
+        background: none;
+        border: none;
+        outline: 0;
+        outline-offset: 0;
+    }
+   
+    p.text-main{
+        font-size: 28px;
+    }
+ 
+    .icons svg{
+        height: 50px;
+        width: 50px;
+    }
+    .carousel-caption {
+        top: 29%;
+    }
+    .row p {
+        font-size: 20px;
+    }
+    .t6 {
+        font-size: 28px;
+        margin-bottom: 2rem;
+    }
+    .text4 {
+        font-size: 24px;
+        line-height: 1.5;
+    }
+    .text5 {
+        font-size: 20px;
+    }
+    .img-op{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+    }
+    .text6{
+        text-align: center;
+    }
+    .text6 h8{
+        font-size: 28px;
+    }
+    .text7 p{
+      display: none;
+    }
+    .spisok{
+        height: 45px;
+        font-size: 16px;
+        border: 1px solid #C3C3C3;
+    }
+    .tb1{
+        height: 45px;
+        font-size: 16px;
+        border: 1px solid #C3C3C3;
+    }
+    .input{
+        height: 280px;
+        display: flex;
+        align-items: center;
+    }
+    .text8{
+        font-size: 11px;
+        line-height: 1;
+        margin-top: 1rem;
+    }
+    .b_order2{
+        
+        font-size: 16px;
+        line-height: 0;
+        padding: 12px 33px;
+        
+    }
+    .cube1{
+        height: 450px;
+    }
+    .text11 h{
+        font-size: 26px;
+    }
+    .text12 h{
+        font-size: 28px;
+    }
+    .rectangle {
+        width: 299px;
+        height: 40px;
+        font-size: 22px;
+        margin-top: 2rem;
+    }
+    .text13 h{
+        font-size: 28px;
+        margin-bottom: 2rem;
+    }
+    .info4 {
+        color: #BFBFBF;
+        position: absolute;
+        font-size: 24px;
+        text-align: center;
+        line-height: 1;
+        padding: 10px;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .info3 {
+        color: #ffffff;
+        position: absolute;
+        font-size: 30px;
+        text-align: center;
+        line-height: 1;
+        padding: 10px;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .more1{
+        display: none;
+    }
+    .more2{
+        display: none;
+    }
+    .info5 {
+        color: #ffffff;
+        position: absolute;
+        padding: 10px;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        text-align: center;
+        line-height: 1;
+    }
+    .info6 {
+        color: #BFBFBF;
+        position: absolute;
+        padding: 10px;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        text-align: center;
+        line-height: 1;
+    }
+    .more3{
+        display: none;
+    }
+    .cube3{
+        background: none;
+    }
+    .text16{
+        display: none;
+    }
+    .text17{
+        display: none;
+    }
+    .text18{
+        display: none;
+    }
+    .text19{
+        display: none;
+    }
+    .text15{
+        display: none;
+    }
+    .info_carts{
+        display: flex;
+        align-items: center;
+    }
+    .wrapper{
+        position: relative;
+        margin-bottom: 1rem;
+    }
+    .text{
+        position: absolute;
+        padding: 10px;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .price1{
+        position: absolute;
+        padding: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }
+    .b_order{
+        padding: 10px;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        padding: 5px 0;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 280px;
+
+        border: 2px solid #F2C094;
+        border-radius: 6px;
+        background: none;
+        color: #F2C094;
+        transition: 0.3s;
+        font-size: 20px;
+        text-decoration: none;
+    }
+    .linkfooter{
+        display: none;
+    }
+    .footer{
+        display: none;
+    }
+}

@@ -1,0 +1,486 @@
+{% load static %}
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Title</title>
+
+        <link href='{% static 'css/bootstrap.min.css' %}' rel="stylesheet">
+        <link href='{% static 'css/css.css' %}' rel="stylesheet">
+        <link href='{% static 'css/media.css' %}' rel="stylesheet">
+
+        <link rel="shortcut icon" href="img/favicon-32x32%201.png" type="image/x-icon">
+
+    </head>
+    <body>
+    <div class="b1">
+
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'mainapp:index' %}"><img src="{% static 'img/logo8.png' %}"
+                                                                                  alt=""></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link" aria-current="page" href="{% url 'mainapp:index' %}">Главная</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'mainapp:index' %}#service">Услуги</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'mainapp:catalog' %}">Каталог</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'mainapp:index' %}#map">Контакты</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'mainapp:index' %}#o_nas">О нас</a>
+                            {#                        <a class="nav-link number" aria-current="page">+7 3522 46-07-08</a>#}
+                            {% if not user.is_authenticated %}
+                                <a class="nav-link number" aria-current="page"
+                                   href="{% url 'authapp:login' %}">Авторизация</a>
+                                <a class="nav-link number" aria-current="page" href="{% url 'authapp:register' %}">Регистрация</a>
+                            {% else %}
+                                <a class="nav-link number" aria-current="page"
+                                   href="{% url 'authapp:login' %}">Корзина</a>
+                                <a class="nav-link number" aria-current="page"
+                                   href="{% url 'authapp:login' %}">Заказы</a>
+                                <a class="nav-link number" aria-current="page" href="{% url 'authapp:logout' %}"><img
+                                        class="exit" src="{% static 'img/icons8-выход-50.png' %}" alt="" width="30"
+                                        height="30"></a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        {#    <div id="carouselExampleCaptions" class="carousel_mobile slide" data-bs-ride="carousel">#}
+        {#        <div class="carousel-inner">#}
+        {#            <div class="carousel-item active">#}
+        {#                <img src="{% static 'img/Group30.png' %}" class="d-block w-100" alt="...">#}
+        {#                <div class="carousel-caption d-md-block">#}
+        {#                    <div class="element-animation">#}
+        {#                          <span>#}
+        {#                    <h5 class="t5">ПОСТАНОВКА НА КАДАСТРОВЫЙ<br>#}
+        {#                        УЧЕТ ЗЕМЛИ, ДОМА, ЗДАНИЯ</h5>#}
+        {##}
+        {#                    <p class="p5">Под ключ - до регистрации в Росреестре<br>#}
+        {#                        До 6 000р - держим цены доступными<br>#}
+        {#                        Готовность документов от 3-х дней</p>#}
+        {#                          </span>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#        </div>#}
+        {#    </div>#}
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <span class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'img/Group20.png' %}" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="element-animation">
+                    <span>
+                        <h5 class="t5">ПОСТАНОВКА НА КАДАСТРОВЫЙ<br>
+                            УЧЕТ ЗЕМЛИ, ДОМА, ЗДАНИЯ</h5>
+
+                        <p class="p5">Под ключ - до регистрации в Росреестре<br>
+                            До 6 000р - держим цены доступными<br>
+                            Готовность документов от 3-х дней</p>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="carousel-item">
+                        <img src="{% static 'img/Group1.png' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="element-animation">
+                    <span>
+                            <h5 class="t5">ДЛЯ ЧЕГО ТРЕБУЕТСЯ КАДАСТРОВЫЙ<br>
+                                УЧЕТ НЕДВИЖИМОСТИ?</h5>
+
+                            <p class="p5">Постановка на кадастровый учет необходима для для того, чтобы<br>
+                                закрепить право собственности на объект недвижимости и<br>
+                                проводить юридические сделки.</p>
+                    </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="{% static 'img/Group 2.png' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="element-animation">
+                    <span>
+                            <h5 class="t5">“Уже более 20 лет мы любим свою работу.<br>
+                                Понимаем проблемы и знаем их<br>
+                                решения. С удовольствием решим и вашу”</h5>
+
+                            <p class="p5">Д.В.Алексеев, СЕО</p>
+                    </span>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="active">
+            <div class="element-animation">
+                    <span>
+                    <div class="text_symbol">
+                        <div class="o_nas_main">
+                            <p class="text-main">Как мы работаем?</p>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12 icons">
+                                    <!--                            <i class="fa-solid fa-list-check"></i>-->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor"
+                                         class="bi bi-list-check" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                              d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                                    </svg>
+                                    <p>Вы заполняете форму на сайте, указав свои контактные данные.</p>
+                                </div>
+                                <div class="col-md-4 col-sm-12 icons">
+                                    <!--                            <i class="fa-solid fa-mobile-screen"></i>-->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor"
+                                         class="bi bi-telephone-forward" viewBox="0 0 16 16">
+                                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm10.762.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                    <p id="o_nas">Мы обрабатываем вашу заявку в течение дня, согласовываем дату
+                                        выезда и приезжаем в назначенное время на объект.</p>
+                                </div>
+                                <div class="col-md-4 col-sm-12 icons">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor"
+                                         class="bi bi-bookmark-check" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                              d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                    </svg>
+                                    <!--                            <i class="fa-regular fa-comment"></i>-->
+                                    <p>Сообщаем вам о готовности технического плана звонком или смс.</p>
+                                </div>
+                            </div>
+                        </span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="element-animation">
+                            <span>
+        <div class="tblock">
+            <h6 id="service" class="t6">Наши услуги</h6>
+            <section class="row">
+                        {% for item in products %}
+                            <div class="col-md-4 col-sm-12 wrapper">
+                    <div class="img-op">
+                        <img src="{{ item.image.url }}" alt="{{ item.name|capfirst }}" width="359" height="229">
+                    </div>
+                    <div class="text">{{ item.name|capfirst }}</div>
+                    <div class="price1">От {{ item.price }} руб</div>
+                    <div class="d-flex justify-content-around">
+                        <a href="#z1" class="b_order">
+                            Заказать
+                        </a>
+                    </div>
+                </div>
+                        {% endfor %}
+            </section>
+        </div>
+                            <a class="more_order" href="{% url 'mainapp:catalog' %}">Смотреть все</a>
+                            </span>
+    </div>
+    <div class="b2">
+        <div class="wrap">
+            <div class="element-animation">
+                    <span>
+                        <div>
+                <div class="text4">Для чего ставят объект на кадастровый учет?<br>
+                    Оформление постройки на участке.
+                </div>
+                <div class="text5">
+                    <ol>
+                        <li>Деление участка на части (межевание).</li>
+                        <li>Купля-продажа, обмен, наследование, дарение недвижимости.</li>
+                        <li>Перепланировка квартиры.</li>
+                        <li>Прописывание лиц в объект недвижимости.</li>
+                        <li>Расчет земельного налога.</li>
+                        <li>Оформление участка в аренду (в том числе и у государства).</li>
+                        <li>Вступление в товарищество собственников.</li>
+                        <li>Судебные разбирательства, связанные с объектом недвижимости.</li>
+                    </ol>
+                </div>
+                <div class="text4">Что вы получите в результате услуги<br> постановки на кадастровый учет под <br> ключ?
+                </div>
+                <div class="text5">
+                    <ol>
+                        <li>Выезд для проведения геодезических измерений границ участка.</li>
+                        <li>Подготовку необходимых документов.</li>
+                        <li>Акт согласования границ участка.</li>
+                        <li>Межевой план в XML формате с ЭЦП кадастрового инженера на CD.</li>
+                        <li>Подачу комплекта документов в Росреестр.</li>
+                        <li>Работу над приостановками в течение года.</li>
+                        <li>Получение выписки из ЕГРП.</li>
+                    </ol>
+                </div>
+                            <div class="i1"><img src="{% static 'img/i2.png' %}" alt="" width="350" height="840"></div>
+            </div>
+
+
+
+                    </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="element-animation">
+                    <span>
+                <div class="info">
+                    <a href="{% url 'mainapp:about1' %}">
+                        <div class="wrapper">
+                            <img class="imgtop" src="{% static 'img/Group15.png' %}" width="359"/>
+                            <div class="info1">Бесплатный акт<br> обследования!</div>
+                            <div class="info2">Всем кто пострадал от<br> лесных пожаров<br> бесплатно снимаем с<br>
+                                учета
+                                сгоревшие
+                                объекты
+                            </div>
+                            <a href="about1.html">
+{#                                <div class="more1">Подробнее</div>#}
+                            </a>
+                        </div>
+                    </a>
+                    <div class="photo_block">
+                        <div class="wrapper">
+                            <img class="imgtop" src="{% static 'img/Group16.png' %}" width="705" height="281"/>
+                            <div class="info3">Технический план</div>
+                            <div class="info4">Заполнить форму заявки и получайте удовольствие<br> от работы
+                                профессионалов
+                                за
+                                небольшие деньги.
+                            </div>
+                            <a href="'mainapp:about2'">
+{#                                <div class="more2">Подробнее</div>#}
+                            </a>
+                        </div>
+
+                        <div class="wrapper">
+                            <img class="imgtop" src="{% static 'img/Group17.png' %}" width="705" height="281"/>
+                            <div class="info5">На треть дешевле и вдвое быстрее!</div>
+                            <div class="info6">Включены все расходы. Нет дополнительных<br> сборов и скрытых платежей.
+                                Честная
+                                цена!
+                            </div>
+                            <a href="'mainapp:about3'">
+{#                                <div class="more3">Подробнее</div>#}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                    </span>
+    </div>
+    <div class="element-animation">
+                    <span>
+    <div class="communication">
+        <div class="textall">
+            <div class="textall_1">
+                <div class="text6" id="z1">
+                    <h8>Отправьте заявку на технический план сейчас</h8>
+
+                </div>
+                <div class="text7">
+                    <p>Вам перезвонит практикующий кадастровый инженер с опытом<br> 20+ лет в области учета
+                        объектов
+                        недвижимости. Отправка<br> бесплатна.</p>
+                </div>
+            </div>
+        </div>
+{#        <form class="input">#}
+{#            <select class="form-select spisok" aria-label="Default select example">#}
+{#                <option selected>Выберите продукт для заказа:</option>#}
+{#                <option value="1">Технический план гаража на участке 5480 руб.</option>#}
+{#                <option value="2">Технический план хозблока на участке 5480 руб.</option>#}
+{#                <option value="3">Технический план жилого дома 5740 руб.</option>#}
+{#                <option value="3">Технический план садового дома 5740 руб.</option>#}
+{#                <option value="3">Технический план гаража в ГСК 5480 руб.</option>#}
+{#                <option value="3">Уведомление о планируемом сносе 680 руб.</option>#}
+{#                <option value="3">Уведомление о планируемом строительстве 730 руб.</option>#}
+{#                <option value="3">Технический план бани на участке 5740 руб.</option>#}
+{#            </select>#}
+{##}
+{#            <input class="tb1" required type="" placeholder="Адрес объекта недвижимости">#}
+{#            <input class="tb1" required type="" placeholder="ФИО" required>#}
+{#            <input class="tb1" required name="phone" required maxlength="11" placeholder="Телефон">#}
+{#            <input class="tb1" required type="email" placeholder="E-mail">#}
+{#            {% csrf_token %}#}
+{#            {{ form.as_p }}#}
+{#        </form>#}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="text8">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных
+            данных, в
+            соответствии с <br> Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на
+            условиях
+            и для целей, определенных в<br> Согласии на обработку персональных данных *
+        </div>
+        <button class="b_order2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Оставить заявку
+        </button>
+
+        </form>
+        <!-- Модальное окно -->
+{#<div class="modal" tabindex="-1">#}
+{#  <div class="modal-dialog">#}
+{#    <div class="modal-content">#}
+{#      <div class="modal-header">#}
+{#        <h5 class="modal-title">Modal title</h5>#}
+{#        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>#}
+{#      </div>#}
+{#      <div class="modal-body">#}
+{#        <p>Modal body text goes here.</p>#}
+{#      </div>#}
+{#      <div class="modal-footer">#}
+{#        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>#}
+{#        <button type="button" class="btn btn-primary">Save changes</button>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</div>#}
+    </div>
+                    </span>
+    </div>
+    </div>
+    <div class="futer"></div>
+    <div class="endblock">
+        <div class="element-animation">
+                            <span>
+        <div class="cube1 container-fluid">
+            <div class="container">
+                <div class="text11">
+                    <h>Не нашли нужную услугу?</h>
+                </div>
+                <div class="tt12 row">
+                    <div class="text12 col-md-8">
+                        <h>МЫ ДЕЛАЕМ ВЕСЬ КОМПЛЕКС<br> ГЕОДЕЗИЧЕСКИХ И КАДАСТРОВЫХ<br> УСЛУГ. ПОЗВОНИТЕ НАМ!</h>
+                    </div>
+                    <div class="rectangle col-md-4"><a class="tel" href="+73522460708"
+                                                       style="text-decoration: none; color: white">+7(3522) 46-07-08</a></div>
+                </div>
+            </div>
+        </div>
+                            </span>
+        </div>
+        <div class="container">
+            <div class="wrap">
+
+                <div class="element-animation">
+                    <span>
+
+            <div class="end_t">
+            <div class="text13">
+                <h>Так же у нас заказывают:</h>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-12 wrapper">
+                    <div class="img-op">
+                        <img src="{% static 'img/t2.png' %}" width="359" height="275"/>
+                    </div>
+                    <div class="text">Технический план хозблока на участке</div>
+                    <!--<div class="price">7180.00 руб.</div>-->
+                    <div class="price1">От 5480.00 руб</div>
+                    <a href="#z1" class="b_order">
+                        Заказать
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12 wrapper">
+                    <div class="img-op">
+                        <img src="{% static 'img/t_end1.png' %}" width="359" height="275"/>
+                    </div>
+                    <div class="text">Топографическая съемка участка</div>
+                    <!--<div class="price">7180.00 руб.</div>-->
+                    <div class="price1">От 5480.00 руб</div>
+                    <a href="#z1" class="b_order">
+                        Заказать
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12 wrapper">
+                    <div class="img-op">
+                        <img src="{% static 'img/t_end2.png' %}" width="359" height="275"/>
+                    </div>
+                    <div class="text">Схема расположения участка</div>
+                    <!--<div class="price">7180.00 руб.</div>-->
+                    <div class="price1">От 3200.00 руб</div>
+                    <a href="#z1" class="b_order">
+                        Заказать
+                    </a>
+                </div>
+            </div>
+                 <a class="more_order" href="{% url 'mainapp:catalog' %}">Смотреть все</a>
+            </div>
+
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <div id="map" class="map">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4d4a381788fd6f28f29538f1a79e4b52b392d5713c22b4a796360d9642051c75&amp;source=constructor"
+                width="100%" height="700" frameborder="0"></iframe>
+        <div class="cube3">
+            <div class="tcube">
+                <div class="text15">ХОТИТЕ ОБСУДИТЬ<br> ЗАКАЗ ЛИЧНО?</div>
+                <div class="text17">Приезжайте к нам в офис:</div>
+                <div class="text16">
+                    Курганская область г.Курган<br> ул.Советская, д.51<br></div>
+                <div class="text18"> Телефон: +7 3522 46-07-08</div>
+                <div class="text19"> ОГРНИП 316450100051703</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="footer_link">
+                <div class="linkfooter">
+                    <a class="link" aria-current="page" href="#">Главная</a>
+                    <a class="link" aria-current="page" href="#service">Услуги</a>
+                    <a class="link" aria-current="page" href="#">Контакты</a>
+                    <a class="link" aria-current="page" href="#o_nas">О нас</a>
+                    <a class="link" aria-current="page">+7 3522 46-07-08</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn-up btn-up_hide"></div>
+    <script src="https://kit.fontawesome.com/67654b4b66.js" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+    <script src="js/digitalBush-jquery.maskedinput-9672630"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    </body>
+    </html>
+{% endblock %}
